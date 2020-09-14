@@ -54,6 +54,7 @@ endif()
 
 set (PYTHON_BRIDGE_SRC_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
 add_subdirectory (src/openvino/inference_engine)
+add_subdirectory (src/openvino/tools/statistics_collector)
 
 # Check Cython version
 if("${CYTHON_VERSION}" VERSION_LESS "0.29")

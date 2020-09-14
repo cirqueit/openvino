@@ -269,6 +269,15 @@ StatusCode CNNNetworkNGraphImpl::getLayerByName(const char* layerName, CNNLayerP
     return cnnNetwork->getLayerByName(layerName, out, resp);
 }
 
+StatusCode CNNNetworkNGraphImpl::getStats(ICNNNetworkStats** stats, ResponseDesc* resp) const
+    noexcept {
+    if (!cnnNetwork) {
+        const_cast<CNNNetworkNGraphImpl *>(this)->convertToCNNNetworkImpl();
+    }
+    if (!cnnNetwork) return GENERAL_ERROR;
+    return cnnNetwork->getStats(stats, resp);
+}
+
 StatusCode CNNNetworkNGraphImpl::addOutput(const std::string& layerName, size_t outputIndex,
                                            ResponseDesc* resp) noexcept {
     IE_PROFILING_AUTO_SCOPE(addOutput)

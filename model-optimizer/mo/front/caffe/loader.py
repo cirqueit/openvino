@@ -31,9 +31,11 @@ from mo.utils.utils import refer_to_faq_msg
 
 def import_caffe_pb2(caffe_parser_path: str):
     # import caffe_pb2
-    sys.path.insert(0, caffe_parser_path)
-    caffe_pb2 = importlib.import_module("caffe_pb2")
-    sys.path.pop(0)
+    # sys.path.insert(0, caffe_parser_path)
+    # caffe_pb2 = importlib.import_module("caffe_pb2")
+    # sys.path.pop(0)
+
+    import mo.front.caffe.proto.caffe_pb2 as caffe_pb2
 
     return caffe_pb2
 
