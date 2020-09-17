@@ -16,6 +16,9 @@
  limitations under the License.
 """
 
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning)
+warnings.filterwarnings("ignore", category=DeprecationWarning)
 import sys
 
 from mo.utils.versions_checker import check_python_version  # pylint: disable=no-name-in-module
