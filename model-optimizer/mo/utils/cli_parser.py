@@ -315,7 +315,7 @@ def get_common_cli_parser(parser: argparse.ArgumentParser = None):
                               help='Force to generate old deprecated IR V7'
                                    ' with layers from old IR specification.',
                               action=DeprecatedStoreTrue,
-                              default=False)
+                              default=True)
     common_group.add_argument('--keep_shape_ops',
                               help='[ Experimental feature ] Enables `Shape` operation with all children keeping. '
                                    'This feature makes model reshapable in Inference Engine',
